@@ -196,7 +196,7 @@
         
     }
 
-    fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user_2.id}`)
+    fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user_2.id || user_2._id}`)
     .then(response => response.json())
     .then(data => {
       console.log("datos de pokemon")
