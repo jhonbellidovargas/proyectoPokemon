@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/icon.png" />
+  <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+  />
+  <!--CSS del Proyecto-->
+  <link rel="stylesheet" type="text/css" href="styles/registro.css"/>
+  <link rel="stylesheet" href="./styles/global.css" />
+  <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="./js/loginValidator.js"></script>
+  <!--FONT AWESONE-->
+  <script src="https://kit.fontawesome.com/9f4c17c68a.js" crossorigin="anonymous"></script>
+  <title>Registro</title>
+</head>
+<body>
+  <section class="vh-100">
+    <section class="container h-100">
+      <section class="row d-flex justify-content-center align-items-center h-100">
+        <section class="col-lg-12 col-xl-11">
+          <section class="card text-black " style="
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.63);
+          ">
+            <section class="card-body p-md-2">
+              <h1 class="title1">Registrate</h1>
+              <section class="row justify-content-center">
+                <section class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  
+                  <form class="mx-1 mx-md-4">
+                    <section class="d-flex flex-row align-items-center mb-2">
+                      <section class="form-outline flex-fill mb-0" >
+                        <label class="form-label title2">Nombre Completo</label>
+                        <input type="text" id="name" class="form-control" placeholder="Ash Ketchup" />
+                      </section>
+                    </section>
+  
+                    <section class="d-flex flex-row align-items-center mb-2">
+                      <section class="form-outline flex-fill mb-0">
+                        <label class="form-label title2" >Correo electrónico</label>
+                        <input type="email" id="email" class="form-control" placeholder="ashketchup@pueblopaleta.com"/>
+                      </section>
+                    </section>
+
+                    <section class="d-flex flex-row align-items-center mb-2">
+                      <section class="form-outline flex-fill mb-0">
+                        <label class="form-label title2">Usuario</label>
+                        <input type="text" id="user" class="form-control" placeholder="pokemaster"/>
+                      </section>
+                    </section>
+  
+                    <section class="d-flex flex-row align-items-center mb-2">
+                      <section class="form-outline flex-fill mb-0">
+                        <label class="form-label title2" >Contraseña</label>
+                        <input type="password" id="contrasenia" class="form-control" />
+                      </section>
+                    </section>
+  
+                    <section class="d-flex flex-row align-items-center mb-2">
+                      <section class="form-outline flex-fill mb-0">
+                        <label class="form-label title2">Confirmar contraseña</label>
+                        <input type="password" id="confirm_contrasenia" class="form-control" />
+                      </section>
+                    </section>
+                    <section class="d-flex justify-content-center mb-2 mb-lg-2">
+                      <input type="button" class="btn btn-primary btn-lg" id="btnRegistrar" value="Registrar"></input>
+                    </section>
+                    <section class="d-flex justify-content-center mx-4 mb-4 mb-lg-4">
+                      <a href="login.html" class="btn-anchor">Iniciar Sesión</a>
+                    </section>
+                    <p class="warnings" id="warnings"></p>
+                  </form>
+                </section>
+                <section class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                  <img src="img/pokemon.png"
+                    class="img-fluid" alt="Sample image">
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</body>
+</html>
+<script src="js/registro.js"></script>

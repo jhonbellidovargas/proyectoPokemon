@@ -31,7 +31,7 @@ const login = async (body) => {
         errorMessage.style.color = "green";
         localStorage.setItem("user", JSON.stringify(res));
         setTimeout(() => {
-          window.location.href = "./login.html";
+          window.location.href = "../pokemon_list.html";
         }, 1000);
       }
     })
