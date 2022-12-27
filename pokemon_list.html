@@ -194,6 +194,8 @@
 </body>
 </html>
 <script>
+    const boton = document.getElementById("esconder")
+    let selectedOption
     /////// estructura de los datos para que funcione
     //// inicio_sesion es el usuario del que esta logeado
     ///// favoritos trae los usuario y y sus pokemones favoritos
@@ -240,10 +242,7 @@
         let objeto = {
             usuario: inicio_sesion,
             pokemenes_favoritos: [
-                "tauros",
-                "ditto",
-                "bulbasaur",
-                "pikachu"
+                "asd"
             ]
         }
         favoritos.push(objeto)
@@ -271,25 +270,83 @@
         select.append(option)
     }
     });
+    const agregarPokemones = async (body) => {
+    fetch("https://proyectofinalm3backend-production.up.railway.app/api/favorites", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+        "Content-Type": "application/json",
+        },
+    })
+        .then((res) => res.json())
+        .then((res) => {
+        if (res.error) {
+           
+        } else {
+            // console.log(res.message);
+            if(res.message){
+                alert("este pokemon ya es uno de tus favoritos")
+            }else{
+                let mensaje_favorito_2 = document.getElementById("favoritos")
+                let boton2_2 = document.getElementById("esconder")
+                let imagen_2 = document.getElementById("imagen")
+
+                imagen_2.classList.add("favorito")
+                        
+                boton2_2.style.display = "none"
+                mensaje_favorito_2.style.display = "block"
+            }
+            
+        }
+        })
+        .catch((e) => {
+            console.log("estas agregando mas")
+        });
+    };
+        
+    boton.addEventListener("click",()=>{
+        let promp = prompt("quieres añadir este pokemon a tus favoritos?")
+        if(promp == "si"){
+            fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user.id}`)
+            .then(response => response.json())
+            .then(data => {
+            const id = data[0].userId
+            console.log(selectedOption.value)
+            let objeto ={
+            userId: id,
+                pokemon: {
+                id: 2,
+                name: selectedOption.value,
+                url: "https://pokeapi.co/api/v2/pokemon/1/"
+            }
+            }
+            agregarPokemones(objeto)
+            
+            }).catch((e) => {
+                console.log("esta duplicado")
+            })
+        }
+        
+    })
     select.addEventListener("change",function(){
-        var selectedOption = this.options[select.selectedIndex];
+        selectedOption = this.options[select.selectedIndex];
 
         fetch(`https://pokeapi.co/api/v2/pokemon/${selectedOption.value}/`)
         .then(response => response.json())
         .then(data => {
             const url = data.sprites.front_default
             for(let index in pokemones_favoritos){
-                let boton = document.getElementById("esconder")
+                let boton2 = document.getElementById("esconder")
                 let mensaje_favorito = document.getElementById("favoritos")
                 if(pokemones_favoritos[index] == selectedOption.value){
                     imagen.classList.add("favorito")
                     
-                    boton.style.display = "none"
+                    boton2.style.display = "none"
                     mensaje_favorito.style.display = "block"
                     break
                 }else{
                     imagen.classList.remove("favorito")
-                    boton.style.display = "block"
+                    boton2.style.display = "block"
                     mensaje_favorito.style.display = "none"
                 }
             }
