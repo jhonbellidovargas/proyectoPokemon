@@ -16,3 +16,5 @@ const logout = () => {
   localStorage.removeItem("user");
   window.location.href = "./login.html";
 };
+
+const currentUserName = user ? user.userName : "";
