@@ -4,6 +4,8 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const errorMessage = document.getElementById("error__message");
 
+const regexUser = /^[a-zA-Z0-9]+$/;
+
 const endPoints = {
   auth: {
     login: `${API}/api/login`,
@@ -24,19 +26,32 @@ const login = async (body) => {
         errorMessage.innerHTML = res.error;
         errorMessage.style.display = "block";
       } else {
-        console.log(res);
         errorMessage.style.display = "block";
         errorMessage.innerHTML = "Login exitoso";
         errorMessage.style.color = "green";
+        localStorage.setItem("user", JSON.stringify(res));
+        setTimeout(() => {
+          window.location.href = "./login.html";
+        }, 1000);
       }
     })
-    .catch((err) => {
+    .catch(() => {
       errorMessage.innerHTML = "Usuario o contraseña incorrectos";
       errorMessage.style.display = "block";
     });
 };
 
 btnLogin.addEventListener("click", () => {
+  if (!regexUser.test(username.value)) {
+    errorMessage.innerHTML = "El usuario no puede contener caracteres especiales o ser vacío";
+    errorMessage.style.display = "block";
+    return;
+  }
+  if (password.value.length < 6) {
+    errorMessage.innerHTML = "La contraseña debe tener al menos 6 caracteres";
+    errorMessage.style.display = "block";
+    return;
+  }
   login({
     userName: username.value,
     password: password.value,
