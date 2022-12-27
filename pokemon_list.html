@@ -250,6 +250,7 @@
   ];
   ///////////////////////
   let user_2 = JSON.parse(localStorage.getItem("user"));
+  console.log('user_2');
   console.log(user_2);
 
   inicio_sesion = user_2.userName || inicio_sesion;
@@ -329,7 +330,7 @@
     let promp = prompt("quieres añadir este pokemon a tus favoritos?");
     if (promp == "si") {
       let objeto = {
-        userId: user_2._id,
+        userId: user_2._id || user_2.id,
         pokemon: {
           id: 2,
           name: selectedOption.value,
