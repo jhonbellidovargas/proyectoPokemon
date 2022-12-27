@@ -11,3 +11,10 @@ if (!user && currentPath !== "/login.html" && currentPath !== "/registro.html") 
   // Si hay usuario logueado y la ruta actual es el login, redirigimos al home
   window.location.href = "./pokemon_favoritos.html";
 }
+
+const logout = () => {
+  localStorage.removeItem("user");
+  window.location.href = "./login.html";
+};
+
+const currentUserName = user ? user.userName : "";
