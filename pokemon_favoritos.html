@@ -1,209 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/profile.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
     <title>pokemones lista de de favoritos</title>
-</head>
-<style>
-    article{
-        display: flex;
-        flex-direction: column;
-        width: 170px;
-        margin: 10px;
-        border-radius: 12px;
-        border: 3px solid rgb(166, 114, 28);
-        background-color: rgb(221, 180, 52);
-        padding: 12px;
+  </head>
+  <style>
+    article {
+      display: flex;
+      flex-direction: column;
+      width: 170px;
+      margin: 10px;
+      border-radius: 12px;
+      border: 3px solid rgb(166, 114, 28);
+      background-color: rgb(221, 180, 52);
+      padding: 12px;
     }
-    #root{
-        display: flex;
-        flex-wrap: wrap;
+    #root {
+      display: flex;
+      flex-wrap: wrap;
     }
     button,
     button::after {
-        padding: 16px 20px;
-        font-size: 18px;
-        background: linear-gradient(45deg, transparent 5%, rgb(204,54,115) 5%);
-        border: 0;
-        color: #fff;
-        letter-spacing: 3px;
-        line-height: 1;
-        box-shadow: 6px 0px 0px rgb(92, 80, 157);
-        outline: transparent;
-        position: relative;
+      padding: 16px 20px;
+      font-size: 18px;
+      background: linear-gradient(45deg, transparent 5%, rgb(204, 54, 115) 5%);
+      border: 0;
+      color: #fff;
+      letter-spacing: 3px;
+      line-height: 1;
+      box-shadow: 6px 0px 0px rgb(92, 80, 157);
+      outline: transparent;
+      position: relative;
     }
 
     button::after {
-        --slice-0: inset(50% 50% 50% 50%);
-        --slice-1: inset(80% -6px 0 0);
-        --slice-2: inset(50% -6px 30% 0);
-        --slice-3: inset(10% -6px 85% 0);
-        --slice-4: inset(40% -6px 43% 0);
-        --slice-5: inset(80% -6px 5% 0);
-        content: "quitar a dragonite de favoritos";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c93 5%);
-        text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
-        clip-path: var(--slice-0);
+      --slice-0: inset(50% 50% 50% 50%);
+      --slice-1: inset(80% -6px 0 0);
+      --slice-2: inset(50% -6px 30% 0);
+      --slice-3: inset(10% -6px 85% 0);
+      --slice-4: inset(40% -6px 43% 0);
+      --slice-5: inset(80% -6px 5% 0);
+      content: "quitar a dragonite de favoritos";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        45deg,
+        transparent 3%,
+        #00e6f6 3%,
+        #00e6f6 5%,
+        #ff013c93 5%
+      );
+      text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+      clip-path: var(--slice-0);
     }
 
     button:hover::after {
-        animation: 1s glitch;
-        animation-timing-function: steps(2, end);
+      animation: 1s glitch;
+      animation-timing-function: steps(2, end);
     }
 
     @keyframes glitch {
-        0% {
+      0% {
         clip-path: var(--slice-1);
         transform: translate(-20px, -10px);
-        }
+      }
 
-        10% {
+      10% {
         clip-path: var(--slice-3);
         transform: translate(10px, 10px);
-        }
+      }
 
-        20% {
+      20% {
         clip-path: var(--slice-1);
         transform: translate(-10px, 10px);
-        }
+      }
 
-        30% {
+      30% {
         clip-path: var(--slice-3);
         transform: translate(0px, 5px);
-        }
+      }
 
-        40% {
+      40% {
         clip-path: var(--slice-2);
         transform: translate(-5px, 0px);
-        }
+      }
 
-        50% {
+      50% {
         clip-path: var(--slice-3);
         transform: translate(5px, 0px);
-        }
+      }
 
-        60% {
+      60% {
         clip-path: var(--slice-4);
         transform: translate(5px, 10px);
-        }
+      }
 
-        70% {
+      70% {
         clip-path: var(--slice-2);
         transform: translate(-10px, 10px);
-        }
+      }
 
-        80% {
+      80% {
         clip-path: var(--slice-5);
         transform: translate(20px, -10px);
-        }
+      }
 
-        90% {
+      90% {
         clip-path: var(--slice-1);
         transform: translate(-10px, 0px);
-        }
+      }
 
-        100% {
+      100% {
         clip-path: var(--slice-1);
         transform: translate(0);
-        }
+      }
     }
-    article > span{
-        color: black;
-        text-transform: capitalize;
-        font-weight: 600;
+    article > span {
+      color: black;
+      text-transform: capitalize;
+      font-weight: 600;
     }
-    body{
-        background: repeat url("img/imagen.png");
+    body {
+      background: repeat url("img/imagen.png");
     }
-</style>
-<body>
-    <header>
-        <nav></nav>
+  </style>
+  <body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo/logo.png" alt="Logo de la marca">
+        </div>
+        <nav>
+           <ul class="nav-links">
+                <li><a href="/profile.html">Profile</a></li>
+                <li><a href="/pokemon_list.html">Pokemon List</a></li>
+                <li><a href="/pokemon_favoritos.html">Pokemon Favorites</a></li>
+           </ul>            
+        </nav>
+        <a class="btn" href="#"><button>Salir</button></a>
     </header>
     <main>
-        <div id="root">
-            
-        </div>
+      <div id="root"></div>
     </main>
-</body>
+  </body>
 </html>
 <script>
-    /////// estructura de los datos para que funcione
-    //// inicio_sesion es el usuario del que esta logeado
-    ///// favoritos trae los usuario y y sus pokemones favoritos
-    inicio_sesion = "javier"
-    let favoritos = [
-        {
-            usuario: "javier",
-            pokemenes_favoritos: [
-                "squirtle",
-                "venonat",
-                "shellder",
-                "dragonite"
-            ]
-        },
-        {
-            usuario: "enrique",
-            pokemenes_favoritos: [
-                "tauros",
-                "ditto",
-                "bulbasaur",
-                "pikachu"
-            ]
-        },
-        {
-            usuario: "carlos",
-            pokemenes_favoritos: [
-                
-            ]
-        }
-    ]
-    ///////////////////////
+  /////// estructura de los datos para que funcione
+  //// inicio_sesion es el usuario del que esta logeado
+  ///// favoritos trae los usuario y y sus pokemones favoritos
+  inicio_sesion = "javier";
+  let favoritos = [
+    {
+      usuario: "javier",
+      pokemenes_favoritos: ["squirtle", "venonat", "shellder", "dragonite"],
+    },
+    {
+      usuario: "enrique",
+      pokemenes_favoritos: ["tauros", "ditto", "bulbasaur", "pikachu"],
+    },
+    {
+      usuario: "carlos",
+      pokemenes_favoritos: [],
+    },
+  ];
+  ///////////////////////
 
-    let pokemones = []
-    for(const index in favoritos) {
-        if(inicio_sesion == favoritos[index].usuario){
-            pokemones = favoritos[index].pokemenes_favoritos
-        }
+  let pokemones = [];
+  for (const index in favoritos) {
+    if (inicio_sesion == favoritos[index].usuario) {
+      pokemones = favoritos[index].pokemenes_favoritos;
     }
-    let root = document.getElementById("root")
-    for(let index in pokemones){
-        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemones[index]}/`)
-        .then(response => response.json())
-        .then(data => {
-            const url = data.sprites.front_default
-            const nombre = pokemones[index]
+  }
+  let root = document.getElementById("root");
+  for (let index in pokemones) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemones[index]}/`)
+      .then((response) => response.json())
+      .then((data) => {
+        const url = data.sprites.front_default;
+        const nombre = pokemones[index];
 
-            let article = document.createElement("article")
-            let imagen = document.createElement("img")
-            let span = document.createElement("span")
-            let button = document.createElement("button")
+        let article = document.createElement("article");
+        let imagen = document.createElement("img");
+        let span = document.createElement("span");
+        let button = document.createElement("button");
 
-            imagen.setAttribute("id","imagen")
-            imagen.setAttribute("class","imagen")
-            imagen.setAttribute("src",url)
-            imagen.setAttribute("alt",nombre)
+        imagen.setAttribute("id", "imagen");
+        imagen.setAttribute("class", "imagen");
+        imagen.setAttribute("src", url);
+        imagen.setAttribute("alt", nombre);
 
-            span.innerHTML = nombre
-            
-            button.innerHTML = `quitar a ${nombre} de favoritos`
+        span.innerHTML = nombre;
 
-            article.append(imagen)
-            article.append(span)
-            article.append(button)
+        button.innerHTML = `quitar a ${nombre} de favoritos`;
 
-            root.append(article)
-        });
-    }
-    
+        article.append(imagen);
+        article.append(span);
+        article.append(button);
+
+        root.append(article);
+      });
+  }
 </script>
