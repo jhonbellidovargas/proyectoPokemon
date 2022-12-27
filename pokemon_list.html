@@ -21,11 +21,8 @@
     .pokedex{
         background: no-repeat url("img/pokedex.png");
         z-index: -1;
-        width: 30rem;
-        height: 30rem;
-        top: 49px;
-        left: 496px;
-        
+        width: 400px;
+        height: 562px;
     }
     .imagen{
         animation: fadeIn 3s ease;
@@ -156,6 +153,14 @@
     body{
         background: repeat url("img/imagen.png");
     }
+    .contenedor-pokedex{
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 <body>
      <header class="header">
@@ -176,7 +181,9 @@
             
         </select>
         <div class="contenedor position-relative" id="contenedor">
-            <div class="pokedex position-absolute"></div>
+            <div class="position-absolute contenedor-pokedex">
+                <div class="pokedex"></div>
+            </div>
             <span id="span" class="fs-1 fw-bold text-uppercase background px-3 font-monospace letra-color">oddish</span>
             <img id="imagen" class="imagen" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png" alt="oddish">
             
@@ -218,7 +225,29 @@
         }
     ]
     ///////////////////////
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user)
 
+    inicio_sesion = user.userName || inicio_sesion
+    let usuario_existe = false
+    for(let index in favoritos){
+        if(favoritos[index].usuario == inicio_sesion){
+            usuario_existe = true
+        }
+        
+    }
+    if(usuario_existe == false){
+        let objeto = {
+            usuario: inicio_sesion,
+            pokemenes_favoritos: [
+                "tauros",
+                "ditto",
+                "bulbasaur",
+                "pikachu"
+            ]
+        }
+        favoritos.push(objeto)
+    }
 
     let pokemones_favoritos = []
     for(const index in favoritos) {
