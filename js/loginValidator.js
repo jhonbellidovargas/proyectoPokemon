@@ -7,7 +7,7 @@ console.log("user");
 // Si no hay usuario logueado y la ruta actual no es el login o el registro, redirigimos al login
 if (!user && currentPath !== "/login.html" && currentPath !== "/registro.html") {
   window.location.href = "./login.html";
-} else if (user && currentPath === "/login.html") {
+} else if (user && (currentPath === "/login.html" || currentPath === "/registro.html")) {
   // Si hay usuario logueado y la ruta actual es el login, redirigimos al home
-  window.location.href = "./index.html";
+  window.location.href = "./pokemon_favoritos.html";
 }
