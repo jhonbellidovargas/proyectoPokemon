@@ -1,0 +1,65 @@
+.btn-primary {
+  height: 40px;
+  min-width: 200px;
+  border: none;
+  background-color: #00b894;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 50px 0;
+}
+
+.btn-primary:hover {
+  background-color: #00ccac;
+}
+
+.btn-secondary {
+  height: 40px;
+  min-width: 200px;
+  border: none;
+  background-color: #d63031;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #e74c3c;
+}
+
+.btn-tertiary {
+  height: 40px;
+  min-width: 200px;
+  border: none;
+  background-color: #0984e3;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-tertiary:hover {
+  background-color: #74b9ff;
+}
+
+.btn-anchor {
+  height: 40px;
+  border: none;
+  font-size: 16px;
+  color: #5b5b5b;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.btn-anchor:hover {
+  text-decoration: underline;
+  color: #474747;
+}
