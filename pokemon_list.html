@@ -231,10 +231,10 @@
         }
     ]
     ///////////////////////
-    const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user)
+    let user_2 = JSON.parse(localStorage.getItem("user"));
+    console.log(user_2)
 
-    inicio_sesion = user.userName || inicio_sesion
+    inicio_sesion = user_2.userName || inicio_sesion
     let usuario_existe = false
     for(let index in favoritos){
         if(favoritos[index].usuario == inicio_sesion){
@@ -311,7 +311,7 @@
     boton.addEventListener("click",()=>{
         let promp = prompt("quieres añadir este pokemon a tus favoritos?")
         if(promp == "si"){
-            fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user.id}`)
+            fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user_2.id}`)
             .then(response => response.json())
             .then(data => {
             const id = data[0].userId
