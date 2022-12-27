@@ -4,22 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>pokemones lista de de favoritos</title>
 </head>
 <style>
     article{
         display: flex;
         flex-direction: column;
-        width: 150px;
+        width: 170px;
         margin: 10px;
         border-radius: 12px;
-        background-color: rgb(37, 189, 70);
+        border: 3px solid rgb(166, 114, 28);
+        background-color: rgb(221, 180, 52);
         padding: 12px;
     }
     #root{
         display: flex;
         flex-wrap: wrap;
+    }
+    button,
+    button::after {
+        padding: 16px 20px;
+        font-size: 18px;
+        background: linear-gradient(45deg, transparent 5%, rgb(204,54,115) 5%);
+        border: 0;
+        color: #fff;
+        letter-spacing: 3px;
+        line-height: 1;
+        box-shadow: 6px 0px 0px rgb(92, 80, 157);
+        outline: transparent;
+        position: relative;
+    }
+
+    button::after {
+        --slice-0: inset(50% 50% 50% 50%);
+        --slice-1: inset(80% -6px 0 0);
+        --slice-2: inset(50% -6px 30% 0);
+        --slice-3: inset(10% -6px 85% 0);
+        --slice-4: inset(40% -6px 43% 0);
+        --slice-5: inset(80% -6px 5% 0);
+        content: "quitar a dragonite de favoritos";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c93 5%);
+        text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+        clip-path: var(--slice-0);
+    }
+
+    button:hover::after {
+        animation: 1s glitch;
+        animation-timing-function: steps(2, end);
+    }
+
+    @keyframes glitch {
+        0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+        }
+
+        10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+        }
+
+        20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+        }
+
+        30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+        }
+
+        40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+        }
+
+        50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+        }
+
+        60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+        }
+
+        70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+        }
+
+        80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+        }
+
+        90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+        }
+
+        100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+        }
+    }
+    article > span{
+        color: black;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    body{
+        background: repeat url("img/imagen.png");
     }
 </style>
 <body>
