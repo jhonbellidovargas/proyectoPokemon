@@ -7,6 +7,10 @@
     <link rel="icon" href="./img/icon.png" />
     <link rel="stylesheet" type="text/css" href="styles/profile.css" />
     <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
@@ -20,165 +24,9 @@
     <script src="./js/loginValidator.js"></script>
     <title>pokemones la lista de la primera generacion</title>
     <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/pokemonlista.css">
   </head>
-  <style>
-    .contenedor {
-      width: 98vw;
-      height: 95vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .pokedex {
-      background: no-repeat url("img/pokedex.png");
-      z-index: -1;
-      width: 400px;
-      height: 562px;
-    }
-    .imagen {
-      animation: fadeIn 3s ease;
-    }
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        filter: blur(20px);
-      }
-      10% {
-        opacity: 1;
-        filter: brightness(2) blur(10px);
-      }
-    }
-    button,
-    button::after {
-      padding: 16px 20px;
-      font-size: 18px;
-      background: linear-gradient(45deg, transparent 5%, rgb(244, 80, 104) 5%);
-      border: 0;
-      color: #fff;
-      letter-spacing: 3px;
-      line-height: 1;
-      box-shadow: 6px 0px 0px rgb(127, 155, 205);
-      outline: transparent;
-      position: relative;
-    }
-
-    button::after {
-      --slice-0: inset(50% 50% 50% 50%);
-      --slice-1: inset(80% -6px 0 0);
-      --slice-2: inset(50% -6px 30% 0);
-      --slice-3: inset(10% -6px 85% 0);
-      --slice-4: inset(40% -6px 43% 0);
-      --slice-5: inset(80% -6px 5% 0);
-      content: "agregar a favoritos";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        45deg,
-        transparent 3%,
-        #00e6f6 3%,
-        #00e6f6 5%,
-        #ff013c 5%
-      );
-      text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
-      clip-path: var(--slice-0);
-    }
-
-    button:hover::after {
-      animation: 1s glitch;
-      animation-timing-function: steps(2, end);
-    }
-
-    @keyframes glitch {
-      0% {
-        clip-path: var(--slice-1);
-        transform: translate(-20px, -10px);
-      }
-
-      10% {
-        clip-path: var(--slice-3);
-        transform: translate(10px, 10px);
-      }
-
-      20% {
-        clip-path: var(--slice-1);
-        transform: translate(-10px, 10px);
-      }
-
-      30% {
-        clip-path: var(--slice-3);
-        transform: translate(0px, 5px);
-      }
-
-      40% {
-        clip-path: var(--slice-2);
-        transform: translate(-5px, 0px);
-      }
-
-      50% {
-        clip-path: var(--slice-3);
-        transform: translate(5px, 0px);
-      }
-
-      60% {
-        clip-path: var(--slice-4);
-        transform: translate(5px, 10px);
-      }
-
-      70% {
-        clip-path: var(--slice-2);
-        transform: translate(-10px, 10px);
-      }
-
-      80% {
-        clip-path: var(--slice-5);
-        transform: translate(20px, -10px);
-      }
-
-      90% {
-        clip-path: var(--slice-1);
-        transform: translate(-10px, 0px);
-      }
-
-      100% {
-        clip-path: var(--slice-1);
-        transform: translate(0);
-      }
-    }
-
-    .favorito {
-      background-color: rgb(244, 80, 104);
-      border-radius: 50%;
-      border: 4px solid rgb(198, 31, 31);
-    }
-
-    .background {
-      background-color: rgb(213, 213, 208);
-      border: 3px solid rgb(147, 148, 148);
-    }
-    .letra-color {
-      color: rgb(84, 83, 89);
-    }
-    .letra-favoritos {
-      background-color: rgb(95, 145, 72);
-      border: 3px solid rgb(105, 77, 67);
-    }
-    body {
-      background: repeat url("img/imagen.png");
-    }
-    .contenedor-pokedex {
-      z-index: -1;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
+  
   <body>
     <header class="header">
       <div class="logo">
@@ -198,7 +46,7 @@
     <main>
       <select
         id="select_lista_pokemones"
-        class="form-select m-3 w-75 bg-secondary text-light border-primary border-3"
+        class="form-select m-3 w-75 bg-secondary text-light border-primary border-3 title2 text-start"
       ></select>
       <div class="contenedor position-relative" id="contenedor">
         <div class="position-absolute contenedor-pokedex">
@@ -206,7 +54,7 @@
         </div>
         <span
           id="span"
-          class="fs-1 fw-bold text-uppercase background px-3 font-monospace letra-color"
+          class="fs-1 text-uppercase background px-3 letra-color title1"
           >abra</span
         >
         <img
@@ -218,6 +66,7 @@
 
         <button
           id="esconder"
+          class="btn-primary px-3"
           style="display: none"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
@@ -226,7 +75,7 @@
         </button>
         <p
           id="favoritos"
-          class="fs-5 fw-medium text-light mt-3 letra-favoritos"
+          class="text-light mt-3 letra-favoritos title2 px-3"
           style="display: none"
         >
           Pokemon agregado a favoritos!!!
@@ -301,155 +150,4 @@
     </div>
   </body>
 </html>
-<script>
-  const boton = document.getElementById("btnAgregar");
-  var alertModal = new bootstrap.Modal(document.getElementById('alertModal'), {
-    keyboard: false
-  })
-
-  let selectedOption;
-  /////// estructura de los datos para que funcione
-  //// inicio_sesion es el usuario del que esta logeado
-  ///// favoritos trae los usuario y y sus pokemones favoritos
-  inicio_sesion = "javier";
-  let favoritos = [
-    {
-      usuario: "javier",
-      pokemenes_favoritos: ["squirtle", "venonat", "shellder", "dragonite"],
-    },
-    {
-      usuario: "enrique",
-      pokemenes_favoritos: ["tauros", "ditto", "bulbasaur", "pikachu"],
-    },
-    {
-      usuario: "carlos",
-      pokemenes_favoritos: [],
-    },
-  ];
-  ///////////////////////
-  let user_2 = JSON.parse(localStorage.getItem("user"));
-  console.log("user_2");
-  console.log(user_2);
-
-  inicio_sesion = user_2.userName || inicio_sesion;
-  let usuario_existe = false;
-  for (let index in favoritos) {
-    if (favoritos[index].usuario == inicio_sesion) {
-      usuario_existe = true;
-    }
-  }
-  if (usuario_existe == false) {
-    let objeto = {
-      usuario: inicio_sesion,
-      pokemenes_favoritos: ["asd"],
-    };
-    favoritos.push(objeto);
-  }
-
-  let pokemones_favoritos = [];
-  for (const index in favoritos) {
-    if (inicio_sesion == favoritos[index].usuario) {
-      pokemones_favoritos = favoritos[index].pokemenes_favoritos;
-    }
-  }
-
-  let imagen = document.getElementById("imagen");
-
-  let select = document.getElementById("select_lista_pokemones");
-  fetch("https://pokeapi.co/api/v2/generation/1/")
-    .then((response) => response.json())
-    .then((data) => {
-      let pokemons = data.pokemon_species;
-      pokemons = pokemons.sort(function (a,b){
-        if (a.name > b.name) {
-          return 1;
-        }
-        if (a.name < b.name) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      })
-      for (const index in pokemons) {
-        let option = document.createElement("option");
-        option.setAttribute("value", pokemons[index].name);
-        option.innerHTML = pokemons[index].name;
-        select.append(option);
-      }
-    });
-  const agregarPokemones = async (body) => {
-    fetch(
-      "https://proyectofinalm3backend-production.up.railway.app/api/favorites",
-      {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.error) {
-        } else {
-          // console.log(res.message);
-          if (res.message) {
-            alertModal.show();
-          } else {
-            let mensaje_favorito_2 = document.getElementById("favoritos");
-            let boton2_2 = document.getElementById("esconder");
-            let imagen_2 = document.getElementById("imagen");
-
-            imagen_2.classList.add("favorito");
-
-            boton2_2.style.display = "none";
-            mensaje_favorito_2.style.display = "block";
-          }
-        }
-      })
-      .catch((e) => {
-        console.log("estas agregando mas");
-      });
-  };
-
-  boton.addEventListener("click", () => {
-    let objeto = {
-      userId: user_2._id || user_2.id,
-      pokemon: {
-        id: 2,
-        name: selectedOption.value,
-        url: `https://pokeapi.co/api/v2/pokemon/${selectedOption.value}/`,
-      },
-    };
-    agregarPokemones(objeto);
-    // ocltar el modal de bootstrap
-  });
-  select.addEventListener("change", function () {
-    selectedOption = this.options[select.selectedIndex];
-
-    fetch(`https://pokeapi.co/api/v2/pokemon/${selectedOption.value}/`)
-      .then((response) => response.json())
-      .then((data) => {
-        const url = data.sprites.front_default;
-        for (let index in pokemones_favoritos) {
-          let boton2 = document.getElementById("esconder");
-          let mensaje_favorito = document.getElementById("favoritos");
-          if (pokemones_favoritos[index] == selectedOption.value) {
-            imagen.classList.add("favorito");
-
-            boton2.style.display = "none";
-            mensaje_favorito.style.display = "block";
-            break;
-          } else {
-            imagen.classList.remove("favorito");
-            boton2.style.display = "block";
-            mensaje_favorito.style.display = "none";
-          }
-        }
-        imagen.setAttribute("src", url);
-        imagen.setAttribute("alt", selectedOption.value);
-        let span = document.getElementById("span");
-        span.innerText = selectedOption.value;
-      });
-  });
-</script>
+<script src="./js/pokemonlista.js"></script>
