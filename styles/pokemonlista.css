@@ -144,7 +144,7 @@
     border: 3px solid rgb(105, 77, 67);
   }
   body {
-    background: repeat url("../img/pokemon.png");
+    background: radial-gradient(circle, rgba(87,125,249,1) 0%, rgba(148,187,233,1) 100%);
   }
   .contenedor-pokedex {
     z-index: -1;

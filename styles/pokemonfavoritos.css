@@ -124,5 +124,5 @@ article {
     font-weight: 600;
   }
   body {
-    background: repeat url("../img/pokemon.png");
+    background: radial-gradient(circle, rgba(87,125,249,1) 0%, rgba(148,187,233,1) 100%);
   }
