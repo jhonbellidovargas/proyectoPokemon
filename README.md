@@ -1,4 +1,4 @@
-# PROYECTO POKEMON - CERTUS
+# POKEMON FAVORITES - CERTUS
 ## Integrantes
 - Astucuri Barrial Jhon Jhonatan
 - Bellido Vargas Jhon Brishman
@@ -63,3 +63,5 @@ Bugs conocidos y posibles correcciones de errores.
     - Fondos de pantalla que desaparecieron.
 
 Información sobre derechos de autor y licencias.
+
+
