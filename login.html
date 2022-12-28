@@ -9,13 +9,20 @@
     <link rel="stylesheet" href="./styles/login.css" />
     <title>Log In</title>
     <script src="./js/loginValidator.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <div class="login-container">
       <h1 class="login-title title1">Login</h1>
       <p class="error__message" id="error__message" style="display: none"></p>
       <form class="login-form" method="POST">
-        <input type="text" name="username" placeholder="Username" required id="username" />
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          required
+          id="username"
+        />
         <input
           type="password"
           name="password"
@@ -30,6 +37,16 @@
       <div class="register__container">
         <a href="registro.html" class="btn-anchor">¿Aún no tienes cuenta?</a>
       </div>
+    </div>
+    <div class="lotie__container">
+      <lottie-player
+        src="./assets/digletAnim.json"
+        background="transparent"
+        speed="1"
+        style="width: 250px; height: 250px;"
+        loop
+        autoplay
+      ></lottie-player>
     </div>
     <script src="./js/login.js"></script>
   </body>
