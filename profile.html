@@ -43,10 +43,6 @@
 
     <main class="main-content">
       <form
-        method="post"
-        name="signupForm"
-        action="?doUpdate"
-        onsubmit="return validateUpdateForm(this)"
       >
         <p class="blueStrip">Editar Perfil</p>
 
@@ -105,12 +101,90 @@
         />
         <div class="helpBox">ingreses un email VÁLIDO.</div>
             <input style="background-color: darkgreen;" type="button"class="btn btn-primary btn-lg"  value="Activar Campos" onclick="activarCampos()"></input>
-            <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar"></input>
+            <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar" data-bs-toggle="modal" data-bs-target="#exampleModal"></input>
             <br/>
-            <button class="btn btn-primary btn-lg mt-5" style="background-color: red;">¡BORRAR CUENTA!</button>
+            <button class="btn btn-primary btn-lg mt-5" style="background-color: red;" id="borrarCuenta" data-bs-toggle="modal" data-bs-target="#idborrarModal">¡BORRAR CUENTA!</button>
       </form>
     </main>
     <footer></footer>
+
+    <!-- MODAL -->
+    <div
+    class="modal fade"
+    id="idborrarModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            ¿Quieres ELIMINAR esta cuenta?
+          </h5>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            style="background: rgb(245, 54, 54)"
+            data-bs-dismiss="modal"
+          >
+            no
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="background: rgb(36, 104, 36); background-color: green"
+            id="btnEliminarCuentasi"
+            data-bs-dismiss="modal"
+          >
+            si
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- MODAL -->
+
+    <!-- MODAL -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¿Quieres actualizar esta cuenta?
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              style="background: rgb(245, 54, 54)"
+              data-bs-dismiss="modal"
+            >
+              no
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="background: rgb(36, 104, 36); background-color: green"
+              id="btnActualizarCuenta"
+              data-bs-dismiss="modal"
+            >
+              si
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL -->
   </body>
 </html>
 <script src="js/profile.js"></script>
