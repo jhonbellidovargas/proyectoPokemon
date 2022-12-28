@@ -6,7 +6,7 @@
 - Sanchez Chavez Javier Francisco
 - Zambrano Marrufo Kevin Jhoel
 
-[pokemon](https://user-images.githubusercontent.com/116897910/209839184-8545c050-ff8f-4985-bc2a-bec26ea48e40.png)
+![PAGINA PRINCIPAL](img/paginaprincipal.png)
 
 ### Explicacion sobre el Proyecto planteado
 
