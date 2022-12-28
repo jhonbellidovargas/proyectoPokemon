@@ -21,11 +21,11 @@ La presente aplicacion denominada ProyectoPokemon,(151 pokemons de la primera ge
 - Una vez registrado se le redirigira a la ventana de pokemon_list, donde podra seleccionar sus pokemons favoritos.
 - Una vez seleccionado sus pokemons favoritos puede pasar a la pagina Pokemon_Favoritos donde podra visualizar los pokemon antes seleccionados.
 - En la ventana de profile podra obvervar los siguientes campos:
-    -Nombre completo.
-    - Correo electronico.
-    - Usuario.
-    - Contraseña 
-    - Confirmacion de la Contraseña
+    - Nombre completo:cowboy_hat_face:
+    - Correo electronico:e-mail:
+    - Usuario:adult:
+    - Contraseña:lock_with_ink_pen:
+    - Confirmacion de la Contraseña:closed_lock_with_key:
     
     - Estos campos estan deshabilitados, por lo cual debera pulsar en la opcion desbloquear campos para poder editar su perfil.
     - Una vez editado su perfil podra visualizar los cambio en el instante.
