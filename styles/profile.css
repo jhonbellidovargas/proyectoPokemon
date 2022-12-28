@@ -1,210 +1,259 @@
 .menu-container {
-    width: 80%;
-    position: absolute;
-    left: 200%;
-    display: block;
-    height: 60px;
-    margin: 0;
-    padding: 0;
-    background-color: #8cc8ec;
-    background-image: url(../img/fondos/recortada.jpg);
-    font-family: roboto condensed,sans-serif;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.3rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 80%;
+  position: absolute;
+  left: 200%;
+  display: block;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  background-color: #8cc8ec;
+  background-image: url(../img/fondos/recortada.jpg);
+  font-family: roboto condensed, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.3rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-main {
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
-
 
 .menu-dropdown-grid-trainers {
-    margin: 20px 0 8px;
-    padding: 0;
+  margin: 20px 0 8px;
+  padding: 0;
 }
 
-
 .blueStrip {
-    font-weight: 700;
-    color: #555;
-    font-size: 1.2rem;
-    line-height: 1rem;
-    border-bottom: 3px solid #79bfea;
-    width: 100%;
-    display: block;
-    padding-bottom: 6px;
-    
+  font-weight: 700;
+  color: #555;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  border-bottom: 3px solid #79bfea;
+  width: 100%;
+  display: block;
+  padding-bottom: 6px;
 }
 
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
-.main-content {
-    margin-top: 20px;
-    width: 40%;
-    text-align: left;
-    float: right;
-    display: block;
-    justify-content: left;
-}
-
 
 body {
-    background-image: url(../img/fondos/recortada.jpg);
-    
+  /* linear gradient color claro estilo pokemon */
+  background: radial-gradient(circle, rgba(87,125,249,1) 0%, rgba(148,187,233,1) 100%);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
 }
 .form-button-default {
-    width: 72%;
-    background-color: #ff9a29;
-    padding: 10px;
-    font-family: roboto condensed,sans-serif;
-    color: #fff;
-    font-size: 1.3rem;
-    border-radius: 0;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    border: 0 solid;
-    font-weight: 700;
-    cursor: pointer;
-    text-shadow: 0 0 3px #000;
-    border-bottom: 2px solid #df7500;
+  width: 72%;
+  background-color: #ff9a29;
+  padding: 10px;
+  font-family: roboto condensed, sans-serif;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 0;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 0 solid;
+  font-weight: 700;
+  cursor: pointer;
+  text-shadow: 0 0 3px #000;
+  border-bottom: 2px solid #df7500;
 }
 .helpBox {
-    font-size: .5rem;
-    color: #333;
-    padding: 6px;
-    background-color: transparent;
-    line-height: normal;
-    margin-bottom: 6px;
-    position: relative;
-    width: 90%;
+  font-size: 0.5rem;
+  color: #333;
+  padding: 6px;
+  background-color: transparent;
+  line-height: normal;
+  margin-bottom: 6px;
+  position: relative;
+  width: 90%;
 }
 div {
-    display: block;
+  display: block;
 }
 input {
-    writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: fieldtext;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    appearance: auto;
-    cursor: text;
-    background-color: field;
-    margin: 0em;
-    padding: 1px 2px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-image: initial;
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: fieldtext;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  cursor: text;
+  background-color: field;
+  margin: 0em;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
 }
 .form-input-default {
-    background-color: transparent;
-    width: 90%;
-    border: 2px solid #79bfea;
-    padding: 12px;
-    color: #333;
-    font-size: 1.1rem;
-    border-radius: 0;
-    font-family: Arial,sans-serif;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    font-weight: 700;
-   
+  background-color: transparent;
+  width: 90%;
+  border: 2px solid #79bfea;
+  padding: 12px;
+  color: #333;
+  font-size: 1.1rem;
+  border-radius: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 /* Style Nanvar*/
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito', sans-serif;
-    font-size: 20px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
 }
 
-body{
-    background-color: #fff59d;
+body {
+  background-color: #fff59d;
 }
 
-.header{
-    background-color: #1b3039;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 85px;
-    padding: 5px 10%;
+.header {
+  background-color: #1b3039;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
 }
 
-.header .logo{
-    cursor: pointer;
+.header .logo {
+  cursor: pointer;
 }
 
-.header .logo img{
-    height: 70px;
-    width: auto;
-    transition: all 0.3s;
+.header .logo img {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s;
 }
 
-.header .logo img:hover{
-    transform: scale(1.2);
+.header .logo img:hover {
+  transform: scale(1.2);
 }
 
-.header .nav-links{
-    list-style: none;
+.header .nav-links {
+  list-style: none;
 }
 
-.header .nav-links li{
-    display: inline-block;
-    padding: 0 20px;    
+.header .nav-links li {
+  display: inline-block;
+  padding: 0 20px;
 }
 
-.header .nav-links li:hover{
-    transform: scale(1.1);
+.header .nav-links li:hover {
+  transform: scale(1.1);
 }
 
-.header .nav-links a{
-    font-size: 700;
-    color: #eceff1;
-    text-decoration: none;    
+.header .nav-links a {
+  font-size: 700;
+  color: #eceff1;
+  text-decoration: none;
 }
 
-.header .nav-links li a:hover{
-    color: #ffbc0e;
+.header .nav-links li a:hover {
+  color: #ffbc0e;
 }
 
-.header .btn button{
-    font-weight: 700;
-    color: #1b3039;
-    padding: 9px 25px;
-    background: #eceff1;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+.header .btn button {
+  font-weight: 700;
+  color: #1b3039;
+  padding: 9px 25px;
+  background: #eceff1;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
-.header .btn button:hover{
-    background-color: #e2f1f8;
-    color: #ffbc0e;
-    transform: scale(1.1);
+.header .btn button:hover {
+  background-color: #e2f1f8;
+  color: #ffbc0e;
+  transform: scale(1.1);
+}
+
+.main-content {
+  font-family: "Press Start 2P";
+  padding: 0 10%;
+  margin: 10px 0;
+}
+
+.main-content h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #1b3039;
+  font-family: "Press Start 2P";
+}
+
+.container__profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px 0;
+}
+
+#pokeball {
+  background-image: url(../img/pokeball.png);
+  width: 350px;
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container__profile__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 0 20px;
+}
+
+.container__profile h2 {
+  margin: 10px 0;
+  font-family: "Press Start 2P";
+  text-align: center;
+}
+
+.container__profile .parrafo {
+  margin: 10px 0;
+  font-family: "Press Start 2P";
+  text-align: start;
+}
+
+#form-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  margin: 10px 0;
 }

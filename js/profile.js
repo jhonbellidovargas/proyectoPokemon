@@ -4,10 +4,17 @@ const email = document.getElementById("email");
 const password = document.getElementById("contrasenia");
 const password2 = document.getElementById("confirm_contrasenia");
 const warnings = document.getElementById("warnings");
+const labelEmail = document.getElementById("labelEmail");
+const labelNickname = document.getElementById("labelNickname");
+const labelName = document.getElementById("labelName");
+
 // const eliminarUsuario = document.getElementById("eliminarUsuario");
 const currentUser = JSON.parse(localStorage.getItem("user"));
-console.log("currentUser");
-console.log(currentUser);
+labelNickname.innerText = `${currentUser.userName}`;
+labelEmail.innerText = `Email:${currentUser.email}`;
+labelName.innerText = `Nombre: ${currentUser.name}`;
+
+
 
 const API = "https://proyectofinalm3backend-production.up.railway.app";
 const endPoints = {

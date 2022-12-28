@@ -14,6 +14,10 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <link
+    href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+    rel="stylesheet"
+    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -21,6 +25,7 @@
     ></script>
     <!-- CSS del proyecto -->
     <link rel="stylesheet" type="text/css" href="styles/profile.css" />
+    <link rel="stylesheet" type="text/css" href="styles/global.css" />
     <script src="./js/loginValidator.js"></script>
     <title>Perfil</title>
   </head>
@@ -32,123 +37,139 @@
       </div>
       <nav>
         <ul class="nav-links">
-          <li><a href="/profile.html">Profile</a></li>
-          <li><a href="/pokemon_list.html">Pokemon List</a></li>
-          <li><a href="/pokemon_favoritos.html">Pokemon Favorites</a></li>
+          <li><a class="headerLink" href="/profile.html">Profile</a></li>
+          <li><a class="headerLink" href="/pokemon_list.html">Pokemon List</a></li>
+          <li><a class="headerLink" href="/pokemon_favoritos.html">Pokemon Favorites</a></li>
         </ul>
       </nav>
       <a class="btn">
-        <button onclick="logout()">Salir</button>
+        <button class="headerLink" onclick="logout()">Salir</button>
       </a>
     </header>
-    <h1 class="title">Perfil</h1>
-    <p class="warnings" id="warnings"></p>
-    <main class="main-content">
-      <form>
-      <form
-      >
-        <p class="blueStrip">Editar Perfil</p>
-        <p>Nombre Completo:</p>
-        <input
-          name="nombre"
-          type="text"
-          class="form-input-default"
-          id="name"
-          value=""
-          placeholder="Nombre "
-          disabled=""
-        />
+    <main class="main-content py-5">
+      <h1 class="text-center">Mi perfil</h1>
+      <div class="container__profile d-flex ronded shadow-lg">
+        <div class="container__profile__img">
+          <div id="pokeball">
+            <img class="imgProfile" src="./img/perfil.png" alt="Imagen del entrenador">
+          </div>
+        </div>
+        <div class="container__profile__content">
+          <h2 id="labelNickname"></h2>
+          <p class="parrafo" id="labelEmail"></p>
+          <p class="parrafo" id="labelName"></p>
+          <button id="editar-perfil-button" class="btn-primary" onclick="activarCampos()">Editar Perfil</button>
+        </div>
+      </div>
 
-        <p>Usuario:</p>
-        <input
-          name="nickname"
-          type="text"
-          class="form-input-default"
-          id="nickname"
-          value=""
-          placeholder="Nombre Usuario"
-          disabled=""
-        />
-
-        
-
-        <div class="helpBox">Deja en blanco si no quieres cambiarla.</div>
-        <input
-          name="password"
-          type="password"
-          class="form-input-default"
-          id="contrasenia"
-          value=""
-          placeholder="Nueva Contraseña"
-          disabled=""
-        />
-
-        <input
-          name="password2"
-          type="password"
-          class="form-input-default"
-          id="confirm_contrasenia"
-          value=""
-          placeholder="Reingresar contraseña"
-          disabled=""
-        />
-
-        <p>Correo:</p>
-        <input
-          name="email"
-          type="text"
-          class="form-input-default"
-          id="email"
-          value=""
-          placeholder="E-mail"
-          disabled=""
-        />
-            <input style="background-color: darkgreen;" type="button"class="btn btn-primary btn-lg"  value="Activar Campos" onclick="activarCampos()"></input>
+      <div id="form-container" class="form-container mt-4 px-4">
+        <form class="form form-profile p-4" id="form-profile">
+          <p class="title1">Editar Perfil</p>
+          <p id="warnings"></p>
+          <p class="title2 text-start">Nombre Completo:</p>
+          <input
+            name="nombre"
+            type="text"
+            class="form-input-default inputText text-start"
+            id="name"
+            value=""
+            placeholder="Nombre "
+            disabled=""
+            style="width: 100%;"
+          />
+  
+          <p class="title2 text-start">Usuario:</p>
+          <input
+            name="nickname"
+            type="text"
+            class="form-input-default inputText text-start"
+            id="nickname"
+            value=""
+            placeholder="Nombre Usuario"
+            disabled=""
+            style="width: 100%;"
+          />
+          <div class="title2 text-start">Contraseña (si no quieres cambiarla deja así)</div>
+          <input
+            name="password"
+            type="password"
+            class="form-input-default inputText text-start mt-2"
+            id="contrasenia"
+            value=""
+            placeholder="Nueva Contraseña"
+            disabled=""
+            style="width: 100%;"
+          />
+  
+          <input
+            name="password2"
+            type="password"
+            class="form-input-default inputText text-start"
+            id="confirm_contrasenia"
+            value=""
+            placeholder="Reingresar contraseña"
+            disabled=""
+            style="width: 100%;"
+          />
+  
+          <p class="title2 text-start">Correo:</p>
+          <input
+            name="email"
+            type="text"
+            class="form-input-default inputText text-start"
+            id="email"
+            value=""
+            placeholder="E-mail"
+            disabled=""
+            style="width: 100%;"
+          />
+          <div class="d-flex justify-content-center mt-2">
             <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar" data-bs-toggle="modal" data-bs-target="#exampleModal"></input>
-            <br/>
-            
-      </form>
-      <button class="btn btn-primary btn-lg mt-5" style="background-color: red;" data-bs-toggle="modal"
-      data-bs-target="#idborrarModal">¡BORRAR CUENTA!</button>
+          </div>
+        </form>
+      </div>
+      <div class="d-flex justify-content-center my-4">
+        <button class="btn btn-primary btn-lg" style="background-color: red;" data-bs-toggle="modal"
+        data-bs-target="#idborrarModal">¡BORRAR CUENTA!</button>
+      </div>
     </main>
-    <footer></footer>
 
     <!-- MODAL -->
     <div
-    class="modal fade"
-    id="idborrarModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
+      class="modal fade"
+      id="idborrarModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
     >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">
-            ¿Quieres ELIMINAR esta cuenta?
-          </h5>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            style="background: rgb(245, 54, 54)"
-            data-bs-dismiss="modal"
-          >
-            No
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="background: rgb(36, 104, 36); background-color: green"
-            id="eliminarUsuario"
-            data-bs-dismiss="modal"
-          >
-            Si
-          </button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¿Quieres ELIMINAR esta cuenta?
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              style="background: rgb(245, 54, 54)"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="background: rgb(36, 104, 36); background-color: green"
+              id="eliminarUsuario"
+              data-bs-dismiss="modal"
+            >
+              Si
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <!-- MODAL -->
 
