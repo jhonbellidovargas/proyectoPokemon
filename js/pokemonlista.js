@@ -127,7 +127,9 @@ selectedOption = this.options[select.selectedIndex];
 fetch(`https://pokeapi.co/api/v2/pokemon/${selectedOption.value}/`)
     .then((response) => response.json())
     .then((data) => {
-    const url = data.sprites.front_default;
+    // const url = data.sprites.front_default;
+    const url = data.sprites.other.home.front_default
+    console.log(data.sprites.other.home.front_default)
     for (let index in pokemones_favoritos) {
         let boton2 = document.getElementById("esconder");
         let mensaje_favorito = document.getElementById("favoritos");
