@@ -105,11 +105,12 @@
         />
         <div class="helpBox">ingreses un email VÁLIDO.</div>
             <input style="background-color: darkgreen;" type="button"class="btn btn-primary btn-lg"  value="Activar Campos" onclick="activarCampos()"></input>
-            <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar" onclick="updateUser()"></input>
+            <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar" data-bs-toggle="modal" data-bs-target="#exampleModal"></input>
             <br/>
             
       </form>
-      <button class="btn btn-primary btn-lg mt-5" style="background-color: red;" id="eliminarUsuario">¡BORRAR CUENTA!</button>
+      <button class="btn btn-primary btn-lg mt-5" style="background-color: red;" data-bs-toggle="modal"
+      data-bs-target="#idborrarModal">¡BORRAR CUENTA!</button>
     </main>
     <footer></footer>
 
@@ -135,16 +136,16 @@
             style="background: rgb(245, 54, 54)"
             data-bs-dismiss="modal"
           >
-            no
+            No
           </button>
           <button
             type="button"
             class="btn btn-primary"
             style="background: rgb(36, 104, 36); background-color: green"
-            id="btnEliminarCuentasi"
+            id="eliminarUsuario"
             data-bs-dismiss="modal"
           >
-            si
+            Si
           </button>
         </div>
       </div>
@@ -164,7 +165,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              ¿Quieres actualizar esta cuenta?
+              ¿Estas seguro de actualizar tus datos?
             </h5>
           </div>
           <div class="modal-footer">
@@ -174,7 +175,7 @@
               style="background: rgb(245, 54, 54)"
               data-bs-dismiss="modal"
             >
-              no
+              No
             </button>
             <button
               type="button"
@@ -182,8 +183,9 @@
               style="background: rgb(36, 104, 36); background-color: green"
               id="btnActualizarCuenta"
               data-bs-dismiss="modal"
+              onclick="updateUser()"
             >
-              si
+              Si
             </button>
           </div>
         </div>
