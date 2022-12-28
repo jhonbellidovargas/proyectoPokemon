@@ -1,0 +1,42 @@
+/* Estilos personalizados para la página */
+body {
+  background-image: url("https://wallpapercave.com/dwp1x/wp7274826.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+.pokemon-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: spin 0.8s linear infinite;
+}
+.lotie__container {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
