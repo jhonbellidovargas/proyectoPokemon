@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="" href="" />
+    <link rel="stylesheet" href="./styles/global.css" />
     <meta name="description" content="Curso de HTML-JS-CSS" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/icon.png" />
@@ -21,7 +22,7 @@
     <!-- CSS del proyecto -->
     <link rel="stylesheet" type="text/css" href="styles/profile.css" />
     <script src="./js/loginValidator.js"></script>
-    <title>PROFILE</title>
+    <title>Perfil</title>
   </head>
 
   <body>
@@ -40,15 +41,21 @@
         <button onclick="logout()">Salir</button>
       </a>
     </header>
-
+    <h1 class="title">Perfil</h1>
+    <p class="warnings" id="warnings"></p>
     <main class="main-content">
-      <form
-        method="post"
-        name="signupForm"
-        action="?doUpdate"
-        onsubmit="return validateUpdateForm(this)"
-      >
+      <form>
         <p class="blueStrip">Editar Perfil</p>
+        <p>Nombre Completo:</p>
+        <input
+          name="nombre"
+          type="text"
+          class="form-input-default"
+          id="name"
+          value=""
+          placeholder="Nombre "
+          disabled=""
+        />
 
         <p>Usuario:</p>
         <input
@@ -61,21 +68,12 @@
           disabled=""
         />
 
-        <p>Nombre Completo:</p>
-        <input
-          name="nickname"
-          type="text"
-          class="form-input-default"
-          id="name"
-          value=""
-          placeholder="Nombre "
-          disabled=""
-        />
+        
 
         <div class="helpBox">Deja en blanco si no quieres cambiarla.</div>
         <input
           name="password"
-          type="text"
+          type="password"
           class="form-input-default"
           id="contrasenia"
           value=""
@@ -85,7 +83,7 @@
 
         <input
           name="password2"
-          type="text"
+          type="password"
           class="form-input-default"
           id="confirm_contrasenia"
           value=""
@@ -105,10 +103,11 @@
         />
         <div class="helpBox">ingreses un email VÁLIDO.</div>
             <input style="background-color: darkgreen;" type="button"class="btn btn-primary btn-lg"  value="Activar Campos" onclick="activarCampos()"></input>
-            <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar"></input>
+            <input type="button" class="btn btn-primary btn-lg" id="btnActualizar" value="Actualizar" onclick="updateUser()"></input>
             <br/>
-            <button class="btn btn-primary btn-lg mt-5" style="background-color: red;">¡BORRAR CUENTA!</button>
+            
       </form>
+      <button class="btn btn-primary btn-lg mt-5" style="background-color: red;" id="eliminarUsuario">¡BORRAR CUENTA!</button>
     </main>
     <footer></footer>
   </body>
