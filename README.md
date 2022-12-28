@@ -60,6 +60,6 @@ Bugs conocidos y posibles correcciones de errores.
 - Los errores que se presentaron a la hora de desarrollar el proyecto, fueron:
     - Redireccion de las ventanas.
     - Quitar pokemon de la lista de favoritos.
-    - fondos de pantalla que desaparecieron.
+    - Fondos de pantalla que desaparecieron.
 
 Información sobre derechos de autor y licencias.
