@@ -232,12 +232,40 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* animacion de la imagen del entrenador al aparecer llega de arriba y se queda en el centro */
+#pokeball img {
+  animation: entrenadorAnim 3s ease ;
+}
+
+@keyframes entrenadorAnim {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+
+
 .container__profile__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   margin: 0 20px;
+  animation: dataAnim 3s ease;
+}
+
+@keyframes dataAnim {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .container__profile h2 {
