@@ -56,7 +56,9 @@ function validarRegistro() {
       listaErrores.push("Contraseña debe ser entre 6 y 20 caracteres");
     }
   }
-  warnings.innerText = listaErrores.join(",");
+  //warnings.innerText = listaErrores.join(",");
+  errorMessage.innerText = listaErrores.join(",");
+  errorMessage.style.display = "block";
   if (listaErrores.length == 0) {
     registrarUsuario({
         name: nom,
@@ -78,9 +80,13 @@ const registrarUsuario = async (body) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.error) {
-        warnings.innerText = res.error;
+        //warnings.innerText = res.error;
+        errorMessage.innerText = res.error;
+        errorMessage.style.display = "block";
       } else {
-        console.log(res);
+        errorMessage.innerText = "Usuario registrado con exito";
+        errorMessage.style.display = "block";
+        errorMessage.style.color = "green";
         localStorage.setItem("user", JSON.stringify(res));
         setTimeout(() => {
           window.location.href = "../pokemon_list.html";
@@ -88,7 +94,9 @@ const registrarUsuario = async (body) => {
       }
     })
     .catch((e) => {
-        warnings.innerText = e;
+        //warnings.innerText = e;
+        errorMessage.innerText = e;
+        errorMessage.style.display = "block";
     });
 };
 
