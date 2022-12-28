@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     background-color: #8cc8ec;
-    background-image: url(./img/fondos/recortada.jpg);
+    background-image: url(../img/fondos/recortada.jpg);
     font-family: roboto condensed,sans-serif;
     font-size: 1rem;
     color: #333;
@@ -62,7 +62,7 @@ p {
 
 
 body {
-    background-image: url(./img/fondos/recortada.jpg);
+    background-image: url(../img/fondos/recortada.jpg);
     
 }
 .form-button-default {
