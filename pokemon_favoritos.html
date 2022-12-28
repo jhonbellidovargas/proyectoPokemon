@@ -163,12 +163,51 @@
     <main>
       <div id="root"></div>
     </main>
+     <!-- MODAL -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              ¿Quieres eliminar este pokemon?
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              style="background: rgb(245, 54, 54)"
+              data-bs-dismiss="modal"
+            >
+              no
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="background: rgb(36, 104, 36); background-color: green"
+              id="btnBorrarPokemon"
+              data-bs-dismiss="modal"
+            >
+              si
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL -->
   </body>
 </html>
 <script>
   /////// estructura de los datos para que funcione
   //// inicio_sesion es el usuario del que esta logeado
   ///// favoritos trae los usuario y y sus pokemones favoritos
+  let pokemonSeleccionado = 0
   inicio_sesion = "javier";
   let favoritos = [
     {
@@ -242,10 +281,45 @@
         imagen.setAttribute("class", "imagen");
         imagen.setAttribute("src", url);
         imagen.setAttribute("alt", nombre);
+        button.setAttribute("data-bs-toggle","modal")
+        button.setAttribute("data-bs-target","#exampleModal")
+        //data-bs-toggle="modal"
+        //data-bs-target="#exampleModal"
 
         span.innerHTML = nombre;
 
+        button.setAttribute("id",nombre)
         button.innerHTML = `quitar a ${nombre} de favoritos`;
+
+        let modal = document.getElementById("exampleModal")
+
+        button.addEventListener("click",(e)=>{
+          console.log(e.target.getAttribute("id"))
+          fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user_2.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data)
+            let filtrado = data.filter((elemento)=>elemento.pokemon.name == e.target.getAttribute("id") )
+            let id_a_eliminar = filtrado[0]._id
+            pokemonSeleccionado = id_a_eliminar
+
+            // fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${id_a_eliminar}`, {
+            //   method: "DELETE",
+            //   headers: {
+            //     "Content-Type": "application/json",
+            //   },
+            // })
+            //   .then((res) => res.json())
+            //   .then((res) => {
+            //     if (res.error) {
+            //       //ERROR
+            //     } else {
+            //       console.log(res);
+            //       location.reload()
+            //     }
+            //   })
+          });
+        })
 
         article.append(imagen);
         article.append(span);
@@ -291,4 +365,22 @@
         root.append(article);
       });
   }
+  let btnBorrarPokemon = document.getElementById("btnBorrarPokemon")
+  btnBorrarPokemon.addEventListener("click",()=>{
+    fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${pokemonSeleccionado}`, {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                if (res.error) {
+                  //ERROR
+                } else {
+                  console.log(res);
+                  location.reload()
+                }
+              })
+  })
 </script>
