@@ -49,6 +49,19 @@ if (inicio_sesion == favoritos[index].usuario) {
 }
 }
 
+fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${user_2.id}`)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+        if(data.length == 0){
+            
+        }else{
+            data.map(function(elemento){
+               console.log(elemento.pokemon.name) 
+               pokemones_favoritos.push(elemento.pokemon.name)
+            })
+        }
+});
 let imagen = document.getElementById("imagen");
 
 let select = document.getElementById("select_lista_pokemones");
