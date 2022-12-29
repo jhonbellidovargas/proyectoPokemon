@@ -1,7 +1,7 @@
 # POKEMON FAVORITES - CERTUS
 ## Integrantes
 - Astucuri Barrial Jhon Jhonatan
-- Bellido Vargas Jhon Brishman
+- Bellido Vargas Jhon Brichman
 - Cabrejos Garcia Giancarlo 
 - Sanchez Chavez Javier Francisco
 - Zambrano Marrufo Kevin Jhoel
