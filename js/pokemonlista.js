@@ -65,27 +65,29 @@ fetch(`https://proyectofinalm3backend-production.up.railway.app/api/favorites/${
 let imagen = document.getElementById("imagen");
 
 let select = document.getElementById("select_lista_pokemones");
-fetch("https://pokeapi.co/api/v2/generation/1/")
+fetch("https://mern-trainee-fractal-backend.vercel.app/api/product.model/getproducts")
 .then((response) => response.json())
 .then((data) => {
-    let pokemons = data.pokemon_species;
-    pokemons = pokemons.sort(function (a,b){
-    if (a.name > b.name) {
-        return 1;
-    }
-    if (a.name < b.name) {
-        return -1;
-    }
-    // a must be equal to b
-    return 0;
-    })
-    for (const index in pokemons) {
-    let option = document.createElement("option");
-    option.setAttribute("value", pokemons[index].name);
-    option.setAttribute("class","title2 text-start text-light")
-    option.innerHTML = pokemons[index].name;
-    select.append(option);
-    }
+    // let pokemons = data.pokemon_species;
+    // pokemons = pokemons.sort(function (a,b){
+    // if (a.name > b.name) {
+    //     return 1;
+    // }
+    // if (a.name < b.name) {
+    //     return -1;
+    // }
+    // // a must be equal to b
+    // return 0;
+    // })
+    // for (const index in pokemons) {
+    // let option = document.createElement("option");
+    // option.setAttribute("value", pokemons[index].name);
+    // option.setAttribute("class","title2 text-start text-light")
+    // option.innerHTML = pokemons[index].name;
+    // select.append(option);
+    // }
+    console.log('data')
+    console.log(data)
 });
 const agregarPokemones = async (body) => {
 fetch(
